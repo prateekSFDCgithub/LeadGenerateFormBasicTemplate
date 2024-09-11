@@ -21,7 +21,7 @@ export default class FormOnboard extends LightningElement {
     @track emailError = '';
     @track phoneError= '';
     @track isLoading = false;
-
+    @track disabledVar =false;
     // Regular expression for email validation
     emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
    phoneRegex = /^\d+$/;
@@ -161,5 +161,6 @@ export default class FormOnboard extends LightningElement {
         this.experienceReason = '';
         this.emailError = false;
         this.template.querySelectorAll('input, select').forEach(el => el.value = '');
+        this.disabledVar =true;
     }
 }

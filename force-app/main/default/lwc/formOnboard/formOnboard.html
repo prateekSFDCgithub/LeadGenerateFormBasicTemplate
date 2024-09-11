@@ -1,7 +1,7 @@
 <!-- sldsValidatorIgnore -->
 <template>
     <div class="form-wrapper">
-        <div  class="container">
+        <div class="container">
             <c-custom-toast></c-custom-toast>
             <template if:true={isLoading}>
                 <div class="loading-spinner"></div>
@@ -13,59 +13,70 @@
                 <form onsubmit={handleSubmit}>
                     <div class="form-row">
                         <div class="input-data">
-                            <input type="text" required value={firstName} oninput={handleInputChange} data-id="firstName" />
+                            <input type="text" required value={firstName} oninput={handleInputChange}
+                                data-id="firstName" disabled={disabledVar} />
                             <div class="underline"></div>
                             <label for="">First Name</label>
                         </div>
                         <div class="input-data">
-                            <input type="text" required value={lastName} oninput={handleInputChange} data-id="lastName" />
+                            <input type="text" required value={lastName} oninput={handleInputChange} data-id="lastName"
+                                disabled={disabledVar} />
                             <div class="underline"></div>
                             <label for="">Last Name</label>
                         </div>
                         <div class="input-data">
-                            <input type="phone" required value ={phone} oninput={handlePhoneChange} data-id="phone" />
+                            <input type="phone" required value={phone} oninput={handlePhoneChange} data-id="phone"
+                                disabled={disabledVar} />
                             <div class="underline"></div>
                             <label for="">Phone</label>
                             <div class="email-error" if:true={phoneError}>Please Enter Valid Phone</div>
                         </div>
                         <div class="input-data">
-                            <input type="email" required value ={email} oninput={handleEmailChange} data-id="email" />
+                            <input type="email" required value={email} oninput={handleEmailChange} data-id="email"
+                                disabled={disabledVar} />
                             <div class="underline"></div>
                             <label for="">Email</label>
                             <div class="email-error" if:true={emailError}>Invalid email format</div>
                         </div>
                         <div class="input-data">
-                            <input type="text" value ={city} required oninput={handleInputChange} data-id="city" />
+                            <input type="text" value={city} required oninput={handleInputChange} data-id="city"
+                                disabled={disabledVar} />
                             <div class="underline"></div>
                             <label for="">City</label>
                         </div>
                         <div class="input-data">
-                            <input type="text" value ={state} required oninput={handleInputChange} data-id="state" />
+                            <input type="text" value={state} required oninput={handleInputChange} data-id="state"
+                                disabled={disabledVar} />
                             <div class="underline"></div>
                             <label for="">State</label>
                         </div>
                         <div class="input-data">
-                            <input type="text" value ={country} required oninput={handleInputChange} data-id="country" />
+                            <input type="text" value={country} required oninput={handleInputChange} data-id="country"
+                                disabled={disabledVar} />
                             <div class="underline"></div>
-                            <label for="">Country </label>
+                            <label for="">Country</label>
                         </div>
                         <div class="input-data">
                             <input type="number" required oninput={handleInputChange}
-                                data-id="yearsOfInsuranceAgencyExperience" value ={yearsOfInsuranceAgencyExperience} />
+                                data-id="yearsOfInsuranceAgencyExperience" value={yearsOfInsuranceAgencyExperience}
+                                disabled={disabledVar} />
                             <div class="underline"></div>
                             <label for="">Years of Insurance Agency experience?</label>
                         </div>
                         <div class="input-data">
-                            <select data-value ={P_CInsuranceSalesExperience} class="strs"  required onchange={handleInputChange} data-id="P_CInsuranceSalesExperience">
+                            <select data-value={P_CInsuranceSalesExperience} class="strs" required
+                                onchange={handleInputChange} data-id="P_CInsuranceSalesExperience"
+                                disabled={disabledVar}>
                                 <option value="" selected></option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
                             <div class="underline"></div>
-                            <label  for="">Do you have P&C Insurance Sales Experience?</label>
+                            <label for="">Do you have P&C Insurance Sales Experience?</label>
                         </div>
                         <div class="input-data">
-                            <select value ={captiveAgentExperience} required onchange={handleInputChange} data-id="captiveAgentExperience">
+                            <select value={captiveAgentExperience} required onchange={handleInputChange}
+                                data-id="captiveAgentExperience" disabled={disabledVar}>
                                 <option value="" selected></option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
@@ -74,7 +85,8 @@
                             <label for="">Have you ever been a captive Agent?</label>
                         </div>
                         <div class="input-data">
-                            <select value ={franchiseProgramSource} class="strs2" required onchange={handleInputChange} data-id="franchiseProgramSource">
+                            <select value={franchiseProgramSource} class="strs2" required onchange={handleInputChange}
+                                data-id="franchiseProgramSource" disabled={disabledVar}>
                                 <option value="" selected></option>
                                 <option value="Internet Search">Internet Search</option>
                                 <option value="Trade Show">Trade Show</option>
@@ -85,10 +97,11 @@
                                 <option value="Other">Other</option>
                             </select>
                             <div class="underline"></div>
-                            <label  for="">How did you hear about the Assurean franchise program?</label>
+                            <label for="">How did you hear about the Assurean franchise program?</label>
                         </div>
                         <div class="input-data">
-                            <select value ={primaryBusiness} class="strs2" required onchange={handleInputChange} data-id="primaryBusiness">
+                            <select value={primaryBusiness} class="strs2" required onchange={handleInputChange}
+                                data-id="primaryBusiness" disabled={disabledVar}>
                                 <option value="" selected></option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
@@ -97,7 +110,8 @@
                             <label for="">Will this be your primary business or only business venture?</label>
                         </div>
                         <div class="input-data">
-                            <select value ={availableCapital} required onchange={handleInputChange} data-id="availableCapital">
+                            <select value={availableCapital} required onchange={handleInputChange}
+                                data-id="availableCapital" disabled={disabledVar}>
                                 <option value="" selected></option>
                                 <option value="50-100k">50-100k</option>
                                 <option value="100k-200k">100k-200k</option>
@@ -107,22 +121,24 @@
                             <label for="">Available Capital to Invest?</label>
                         </div>
                         <div class="input-data">
-                            <input value ={franchiseState} class="strs2" type="text" required oninput={handleInputChange} data-id="franchiseState" />
+                            <input value={franchiseState} class="strs2" type="text" required oninput={handleInputChange}
+                                data-id="franchiseState" disabled={disabledVar} />
                             <div class="underline"></div>
-                            <label  for="">In what state would you operate your Assurean Franchise?</label>
+                            <label for="">In what state would you operate your Assurean Franchise?</label>
                         </div>
                         <div class="input-data">
-                            <input value ={experienceReason} type="textarea" required oninput={handleInputChange} data-id="experienceReason" />
+                            <input value={experienceReason} type="textarea" required oninput={handleInputChange}
+                                data-id="experienceReason" disabled={disabledVar} />
                             <div class="underline"></div>
-                            <label  for="">Please tell us more about your experience & why you believe you will be a great
-                                franchisee.</label>
+                            <label for="">Please tell us more about your experience & why you believe you will be a
+                                great franchisee.</label>
                         </div>
                     </div>
-    
+
                     <div class="form-row submit-btn slds-align_absolute-center">
                         <div class="input-data">
                             <div class="inner"></div>
-                            <input  onclick={handleSubmit} type="submit" value="Submit" />
+                            <input disabled={disabledVar} onclick={handleSubmit} type="submit" value="Submit" />
                         </div>
                     </div>
                 </form>
