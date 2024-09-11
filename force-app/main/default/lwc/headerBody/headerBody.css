@@ -1,0 +1,98 @@
+.tabs-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.tabs {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Aligns tabs to the left */
+    padding-left: 20px; /* Adds some spacing from the left side */
+    z-index: 10;
+}
+
+.tabs button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tabs button:hover {
+    background-color: rgba(85, 85, 85, 0.7);
+}
+
+.active-tab {
+    background-color: rgba(0, 123, 255, 0.7);
+}
+
+.home-tab {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(135deg, #177feb, #051d59); /* Pink-violet neon blue gradient */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.onboard-button-container {
+    position: relative;
+    z-index: 10;
+}
+
+.onboard-button {
+    padding: 15px 30px;
+    font-size: 25px;
+    font-weight: bolder;
+    background-color: rgba(0, 0, 0, 0.7); /* Bright green background */
+    color: #ffffff; /* Dark gray text color for good contrast */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    animation: flash 1.5s infinite;
+    filter: brightness(1.2); 
+}
+
+@keyframes flash {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.about-tab {
+    padding: 20px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    height: calc(100vh - 50px);
+    transition: background 1.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    font-size: 18px;
+    line-height: 1.6;
+}

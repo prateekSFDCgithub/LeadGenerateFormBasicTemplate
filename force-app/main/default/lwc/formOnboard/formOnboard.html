@@ -1,0 +1,132 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div class="form-wrapper">
+        <div  class="container">
+            <c-custom-toast></c-custom-toast>
+            <template if:true={isLoading}>
+                <div class="loading-spinner"></div>
+            </template>
+            <div class="gapBTW">
+                <div class="text">
+                    Assurrean Onboard
+                </div>
+                <form onsubmit={handleSubmit}>
+                    <div class="form-row">
+                        <div class="input-data">
+                            <input type="text" required value={firstName} oninput={handleInputChange} data-id="firstName" />
+                            <div class="underline"></div>
+                            <label for="">First Name</label>
+                        </div>
+                        <div class="input-data">
+                            <input type="text" required value={lastName} oninput={handleInputChange} data-id="lastName" />
+                            <div class="underline"></div>
+                            <label for="">Last Name</label>
+                        </div>
+                        <div class="input-data">
+                            <input type="phone" required value ={phone} oninput={handlePhoneChange} data-id="phone" />
+                            <div class="underline"></div>
+                            <label for="">Phone</label>
+                            <div class="email-error" if:true={phoneError}>Please Enter Valid Phone</div>
+                        </div>
+                        <div class="input-data">
+                            <input type="email" required value ={email} oninput={handleEmailChange} data-id="email" />
+                            <div class="underline"></div>
+                            <label for="">Email</label>
+                            <div class="email-error" if:true={emailError}>Invalid email format</div>
+                        </div>
+                        <div class="input-data">
+                            <input type="text" value ={city} required oninput={handleInputChange} data-id="city" />
+                            <div class="underline"></div>
+                            <label for="">City</label>
+                        </div>
+                        <div class="input-data">
+                            <input type="text" value ={state} required oninput={handleInputChange} data-id="state" />
+                            <div class="underline"></div>
+                            <label for="">State</label>
+                        </div>
+                        <div class="input-data">
+                            <input type="text" value ={country} required oninput={handleInputChange} data-id="country" />
+                            <div class="underline"></div>
+                            <label for="">Country </label>
+                        </div>
+                        <div class="input-data">
+                            <input type="number" required oninput={handleInputChange}
+                                data-id="yearsOfInsuranceAgencyExperience" value ={yearsOfInsuranceAgencyExperience} />
+                            <div class="underline"></div>
+                            <label for="">Years of Insurance Agency experience?</label>
+                        </div>
+                        <div class="input-data">
+                            <select data-value ={P_CInsuranceSalesExperience} class="strs"  required onchange={handleInputChange} data-id="P_CInsuranceSalesExperience">
+                                <option value="" selected></option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <div class="underline"></div>
+                            <label  for="">Do you have P&C Insurance Sales Experience?</label>
+                        </div>
+                        <div class="input-data">
+                            <select value ={captiveAgentExperience} required onchange={handleInputChange} data-id="captiveAgentExperience">
+                                <option value="" selected></option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <div class="underline"></div>
+                            <label for="">Have you ever been a captive Agent?</label>
+                        </div>
+                        <div class="input-data">
+                            <select value ={franchiseProgramSource} class="strs2" required onchange={handleInputChange} data-id="franchiseProgramSource">
+                                <option value="" selected></option>
+                                <option value="Internet Search">Internet Search</option>
+                                <option value="Trade Show">Trade Show</option>
+                                <option value="Direct Mail">Direct Mail</option>
+                                <option value="Social Media">Social Media</option>
+                                <option value="Personal Referral">Personal Referral</option>
+                                <option value="Referred by Broker">Referred by Broker</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="underline"></div>
+                            <label  for="">How did you hear about the Assurean franchise program?</label>
+                        </div>
+                        <div class="input-data">
+                            <select value ={primaryBusiness} class="strs2" required onchange={handleInputChange} data-id="primaryBusiness">
+                                <option value="" selected></option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <div class="underline"></div>
+                            <label for="">Will this be your primary business or only business venture?</label>
+                        </div>
+                        <div class="input-data">
+                            <select value ={availableCapital} required onchange={handleInputChange} data-id="availableCapital">
+                                <option value="" selected></option>
+                                <option value="50-100k">50-100k</option>
+                                <option value="100k-200k">100k-200k</option>
+                                <option value="200k+">200k+</option>
+                            </select>
+                            <div class="underline"></div>
+                            <label for="">Available Capital to Invest?</label>
+                        </div>
+                        <div class="input-data">
+                            <input value ={franchiseState} class="strs2" type="text" required oninput={handleInputChange} data-id="franchiseState" />
+                            <div class="underline"></div>
+                            <label  for="">In what state would you operate your Assurean Franchise?</label>
+                        </div>
+                        <div class="input-data">
+                            <input value ={experienceReason} type="textarea" required oninput={handleInputChange} data-id="experienceReason" />
+                            <div class="underline"></div>
+                            <label  for="">Please tell us more about your experience & why you believe you will be a great
+                                franchisee.</label>
+                        </div>
+                    </div>
+    
+                    <div class="form-row submit-btn slds-align_absolute-center">
+                        <div class="input-data">
+                            <div class="inner"></div>
+                            <input  onclick={handleSubmit} type="submit" value="Submit" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>

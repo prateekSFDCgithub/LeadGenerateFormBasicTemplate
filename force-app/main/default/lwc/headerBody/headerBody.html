@@ -1,0 +1,30 @@
+<template>
+    <div class="tabs-container">
+        <!-- Tabs Navigation -->
+        <div class="tabs">
+            <button class={homeTabClass} onclick={showHomeTab}>Home</button>
+            <button class={aboutTabClass} onclick={showAboutTab}>About Us</button>
+        </div>
+
+        <!-- Home Tab Content -->
+        <template if:true={isHomeTab}>
+            <div class="home-tab">
+                <div class="onboard-button-container">
+                    <button onclick={OpenFormFun} class="onboard-button">Click To Onboard</button>
+                </div>
+            </div>
+        </template>
+
+        <!-- About Us Tab Content -->
+        <template if:true={isAboutTab}>
+            <div class="about-tab">
+                <div class="about-container">
+                    <h1>About Us</h1>
+                    <p>
+                        Welcome to our platform! We specialize in offering the best onboarding experience. Our company is dedicated to delivering top-notch services that enhance user engagement and customer satisfaction.
+                    </p>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

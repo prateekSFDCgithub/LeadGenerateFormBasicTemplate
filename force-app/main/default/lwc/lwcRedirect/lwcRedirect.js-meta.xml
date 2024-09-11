@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property   name="recordId" label="Record Id to Navigate to" type="String" default="recordId"></property>
+            <property   name="label" label="Label of the redirect link" type="String" default="Click here to redirect to new record"></property>
+            <property   name="viewAction" label="Set as True to View Record, Set as False to Edit Record" type="Boolean" default="True"></property> 
+            <property   name="forceRecordViewUpdate" label="Refresh Record After Redirection?" type="Boolean" default="True"></property> 
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
