@@ -33,11 +33,14 @@
 form {
     padding-top: 30px;
 }
+
 .gapBTW {
     display: flex;
-    flex-direction: column; /* This will stack the items vertically */
+    flex-direction: column;
+    /* This will stack the items vertically */
     gap: 20px;
 }
+
 .form-row {
     display: flex;
     gap: 20px;
@@ -104,6 +107,7 @@ form {
 .input-data input:valid~.underline:before {
     transform: scale(1);
 }
+
 .email-error {
     color: #d9534f;
     font-size: 12px;
@@ -136,19 +140,20 @@ form {
     }
 
     .input-data input.strs:focus~label,
-.input-data input.strs:valid~label,
-.input-data select.strs:focus~label,
-.input-data select.strs:valid~label{
-    font-size: 12px;
-    transform: translateY(-20px);
-}
-.input-data input.strs2:focus~label,
-.input-data input.strs2:valid~label,
-.input-data select.strs2:focus~label,
-.input-data select.strs2:valid~label{
-    font-size: 10px;
-}
-    
+    .input-data input.strs:valid~label,
+    .input-data select.strs:focus~label,
+    .input-data select.strs:valid~label {
+        font-size: 12px;
+        transform: translateY(-20px);
+    }
+
+    .input-data input.strs2:focus~label,
+    .input-data input.strs2:valid~label,
+    .input-data select.strs2:focus~label,
+    .input-data select.strs2:valid~label {
+        font-size: 10px;
+    }
+
     /*picklist value font size */
     .input-data input,
     .input-data select {
