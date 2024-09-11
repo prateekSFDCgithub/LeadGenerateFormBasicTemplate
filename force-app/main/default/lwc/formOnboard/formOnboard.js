@@ -83,10 +83,10 @@ export default class FormOnboard extends LightningElement {
 
         // Check if all fields are filled
         const allFieldsFilled = fields.every(field => this[field] && this[field].trim() !== '');
-      /*  if (!allFieldsFilled) {
+        if (!allFieldsFilled) {
             this.showCustomToast('Please fill all the fields to submit the form.', 'warning');
             return false;
-        }*/
+        }
 
         // Validate email format
         if (!this.emailRegex.test(this.email)) {
@@ -160,5 +160,6 @@ export default class FormOnboard extends LightningElement {
         this.franchiseState = '';
         this.experienceReason = '';
         this.emailError = false;
+        this.template.querySelectorAll('input, select').forEach(el => el.value = '');
     }
 }
