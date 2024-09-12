@@ -39,22 +39,25 @@
                             <div class="email-error" if:true={emailError}>Invalid email format</div>
                         </div>
                         <div class="input-data">
-                            <input type="text" value={city} required oninput={handleInputChange} data-id="city"
+                            <input type="text" value={city} required oninput={handleAddressChange} data-id="city"
                                 disabled={disabledVar} />
                             <div class="underline"></div>
                             <label for="">City</label>
+                            <div class="email-error" if:true={cityError}>Invalid Value in city</div>
                         </div>
                         <div class="input-data">
-                            <input type="text" value={state} required oninput={handleInputChange} data-id="state"
+                            <input type="text" value={state} required oninput={handleAddressChange} data-id="state"
                                 disabled={disabledVar} />
                             <div class="underline"></div>
                             <label for="">State</label>
+                            <div class="email-error" if:true={stateError}>Invalid Value in state.</div>
                         </div>
                         <div class="input-data">
-                            <input type="text" value={country} required oninput={handleInputChange} data-id="country"
+                            <input type="text" value={country} required oninput={handleAddressChange} data-id="country"
                                 disabled={disabledVar} />
                             <div class="underline"></div>
                             <label for="">Country</label>
+                            <div class="email-error" if:true={countryError}>Invalid Value in country.</div>
                         </div>
                         <div class="input-data">
                             <input type="number" required oninput={handleInputChange}
@@ -64,7 +67,7 @@
                             <label for="">Years of Insurance Agency experience?</label>
                         </div>
                         <div class="input-data">
-                            <select data-value={P_CInsuranceSalesExperience} class="strs" required
+                            <select value={P_CInsuranceSalesExperience} class="strs" required
                                 onchange={handleInputChange} data-id="P_CInsuranceSalesExperience"
                                 disabled={disabledVar}>
                                 <option value="" selected></option>

@@ -19,44 +19,66 @@ export default class FormOnboard extends LightningElement {
     @track franchiseState = '';
     @track experienceReason = '';
     @track emailError = '';
-    @track phoneError= '';
+    @track phoneError = '';
     @track isLoading = false;
-    @track disabledVar =false;
+    @track disabledVar = false;
+    @track AdressError = false;
+    @track cityError=false;
+    @track stateError=false;
+    @track countryError=false;
     // Regular expression for email validation
     emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-   phoneRegex = /^\d+$/;
-   
-   handlePhoneChange(event) {
-    this.phone = event.target.value;
-    console.log('')
-    this.phoneError = !this.phoneRegex.test(this.phone);
-    if (this.phone == ''){
-    this.phoneError = false;
-   }
- }
+    phoneRegex = /^[0-9]+$/;
+    alphaRegex = /^[A-Za-z]+$/;
+    handlePhoneChange(event) {
+        this.phone = event.target.value;
+        console.log('')
+        this.phoneError = !this.phoneRegex.test(this.phone);
+        if (this.phone == '') {
+            this.phoneError = false;
+        }
+    }
 
- // Handle input change for text fields
+    // Handle input change for text fields
     handleInputChange(event) {
         const field = event.target.dataset.id;
-        if(this[field]!='P_CInsuranceSalesExperience'){
-            this[field] = event.target.value;
-        }
-        if(this[field]=='P_CInsuranceSalesExperience'){
-            this[field] = event.target.dataset.value;
-        }
+        this[field] = event.target.value;
     }
     handleEmailChange(event) {
         this.email = event.target.value;
-        
-            this.emailError = !this.emailRegex.test(this.email);
-        
-       if (this.email == ''){
-        this.emailError = false;
-       }
-            
+
+        this.emailError = !this.emailRegex.test(this.email);
+
+        if (this.email == '') {
+            this.emailError = false;
+        }
+
+    }
+    handleAddressChange(event) {
+        const field = event.target.dataset.id;
+         this[field] = event.target.value;
+        if (field == 'country') {
+            this.countryError = !this.alphaRegex.test(this[field]);
+            console.log('countryInside');
+        }
+        if (this.country == '') {
+            this.countryError = false;
+        }
+        if (field == "state") {
+            this.stateError = !this.alphaRegex.test(this[field]);
+        }
+        if (this.state == '') {
+            this.stateError = false;
+        }
+        if (field == "city") {
+            this.cityError = !this.alphaRegex.test(this[field]);
+        }
+        if (this.city == '') {
+            this.cityError = false;
+        }
      }
-        
-     // Handle select change for dropdowns
+
+    // Handle select change for dropdowns
     handleSelectChange(event) {
         const selectElem = event.target;
         this[selectElem.dataset.id] = selectElem.value;
@@ -161,6 +183,6 @@ export default class FormOnboard extends LightningElement {
         this.experienceReason = '';
         this.emailError = false;
         this.template.querySelectorAll('input, select').forEach(el => el.value = '');
-        this.disabledVar =true;
+        this.disabledVar = true;
     }
 }
