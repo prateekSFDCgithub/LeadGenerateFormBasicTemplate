@@ -26,10 +26,12 @@ export default class FormOnboard extends LightningElement {
     @track cityError=false;
     @track stateError=false;
     @track countryError=false;
+    @track yearsOfInsuranceAgencyExperienceError=false;
     // Regular expression for email validation
     emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     phoneRegex = /^[0-9]+$/;
     alphaRegex = /^[A-Za-z]+$/;
+    yearsRegex = /^\d{1,2}$/;
     handlePhoneChange(event) {
         this.phone = event.target.value;
         console.log('')
@@ -53,6 +55,15 @@ export default class FormOnboard extends LightningElement {
             this.emailError = false;
         }
 
+    }
+    handleYearsOfInsurAgencyExp(event){
+        this.yearsOfInsuranceAgencyExperience = event.target.value;
+
+        this.yearsOfInsuranceAgencyExperienceError = !this.yearsRegex.test(this.yearsOfInsuranceAgencyExperience);
+
+        if (this.yearsOfInsuranceAgencyExperience == '') {
+            this.yearsOfInsuranceAgencyExperienceError = false;
+        }
     }
     handleAddressChange(event) {
         const field = event.target.dataset.id;
